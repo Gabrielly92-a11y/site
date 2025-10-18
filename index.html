@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device, initial-scale=1.0">
+    <title>Página test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            
+        }
+        header {
+            background-color: #f05033;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 25px rgba(0,0,0,0.1);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo h1 {
+            font-size: 1.Brem;
+        }
+        nav {
+            background-color: #24292e;
+            padding: 10px 0;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f05033;
+        }
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #e1e4e8;
+        }
+        h2 {
+            color: #24292e;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        h3 {
+            color: #f05033;
+            margin: 25px 0 15px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .command-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h4 {
+            color: #24292e;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        .code-block {
+            background-color: #24292e;
+            color: #f6f8fa;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .simulator {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .terminal {
+            background-color: #24292e;
+            color: #f6f8fa;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            min-height: 200px;
+            margin-bottom: 15px;
+            overflow-y: auto;
+        }
+        .terminal-line {
+            margin-bottom: 5px;
+        }
+        .terminal-prompt {
+            color: #6cc644;
+        }
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+        .input-area input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Courier New',  monospace;
+        }
+        .input-area button {
+            background-color: #f05033;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .input-area button:hover {
+            background-color: #d03a20;
+        }
+        footer {
+            background-color: #24292e;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav li {
+                margin: 5px 0;
+            }
+            .command-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Git para Iniciantes</h1>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#introducao">Introdução</a></li>
+                <li><a href="#configuracao">Configuração</a></li>
+                <li><a href="#comandos">Comandos Básicos</a></li>
+                <li><a href="#fluxo">Fluxo de Trabalho</a></li>
+                <li><a href="#simulador">Simulador</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="introducao">
+            <h2>O que é Git</h2>
+            <p>Git é um sistema de controle de versão distribuído, amplamente utulizado no desenvolvimento
+                de software para rastrear mundaças no código-fonte durante o desenvolvimento</p>
+            <p>Com o Git, você pode:</p>
+            <ul>
+                <li>Controlar versões do seu código</li>
+                <li>Trabalhar em equipe de forma organizada</li>
+                <li>Voltar para versões anteriores quando necessário</li>
+                <li>Experimentar novas ideias sem medo de perder o trabalho</li>
+            </ul>
+            <h3>Por que usar Git com VSCODE?</h3>
+            <p>O VSCode possui integração nativa com Git, tornando o controle
+                da versãomais visual e acessível para Iniciantes.</p>
+        </section>
+
+        <section id="configuracao">
+            <h2>Configuração Inicial</h2>
+            <p>Antes de começar, vocêprecisa configurar o Git no seu pc:</p>
+
+            <div class="code-block">
+                # Configurar seu nome de usuário<br>
+                git config --global user.name "Seu nome"<br><br>
+
+                # Configurar seu email<br>
+                git config --global user.email "email@exemplo.com"<br><br>
+
+                # Verificar configurações<br>
+                git config --list
+            </div>
+
+            <h3>Inicializando um Repositório</h3>
+            <p>Para começar a usar Git em um projeto, você precisa inicializar um repositório:</p>
+
+            <div class="code-block">
+                # Navegue até a pasta do seu projeto<br>
+                cd caminho/para/seu/projeto<br><br>
+                # Inicialize o repositório Git<br>
+                git init 
+            </div>
+        </section>
+
+        <section id="comandos">
+            <h2>Comandos Básicos do Git</h2>
+            <p>Estes são os comandos mais importantes que você usará regularmente:</p>
+
+            <div class="command-cards">
+                <div class="card">
+                    <h4>git status</h4>
+                    <p>Mostra o estado atual do seu repositório: arqivos modificados, adicionados,
+                    etc.</p>
+
+                    <div class="code-block">git status</div>
+                </div>
+
+                <div class="card">
+                    <h4> git add</h4>
+                    <p>Adiciona arquivos no staged ares, preprando-os para serem commitados.</p>
+                    <div class="code-block">
+                        # Adicionar um arquivo específico<br>
+                        git add arquivo.html<br><br>
+
+                        # Adicionar todos os arquivos<br>
+                        git add .
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4>git commit</h4>
+                    <p>Salva as mundaças no repositório com uma mensagem descritiva.</p>
+                    <div class="code-block">git commit -m "Mensagem descritiva das mundaças"</div>
+                </div>
+
+                <div class="card">
+                    <h4>git log</h4>
+                    <p>Mostra o histórico de commits do repositório.</p>
+                    <div class="code-block">git log</div>
+                </div>
+
+                <div class="card">
+                    <h4>git branch</h4>
+                    <p>Lista, cria ou deleta branches (ramificações) no repositório.</p>
+                    <div class="code-block">
+                        # Listar branches<br>
+                        git branch<br><br>
+
+                        # Criar nova branch<br>
+                        git branch nova-feature<br><br>
+
+                        # Deletar branch<br>
+                        git branch -d branch-para-deletar
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4>git checkout</h4>
+                    <p>Muda entre branches ou restaura arquivos.</p>
+                    <div class="code-block">
+                        # Mudar para uma branch<br>
+                        git checkout nome-da-branch<br><br>
+
+                        # Criar e mudar para nova branch<br>
+                        git checkout -b nova-branch
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fluxo">
+            <h2>Fluxo de Trabalho Básico</h2>
+            <p>Um fluxo de trabalho com o Git envolve estes passos:</p>
+
+            <ol>
+                <li><strong>Modificar arquivos</strong> - Faça mudanças no seu código</li>
+                <li><strong>Verificar status</strong> -  Use <code>git status</code> para ver o que 
+                mudou</li>
+               <li><strong>Adicionar mudanças</strong> - Use <code>git add</code> para preprar as
+            mudanças</li>
+            <li><strong>Commit</strong> - Use <code>git add</code> para salvar as mudanças</li>
+            <li><strong>Repetir</strong> - Continue este ciclo conforme desenvolve</li>
+            </ol>
+
+            <h3>Exemplo Prático</h3>
+            <div class="code-block">
+                # 1.Verificar status<br>
+                git status<br><br>
+
+                # 2.Adicionar todos os arquivos modificados<br>
+                git add .<br><br>
+
+                # 3.Fazer commit com mensagem<br>
+                git commit -m "Adiciona funcionalidade X"<br><br>
+
+                # 4.Verificar histórico<br>
+                git log --oneline
+            </div>
+        </section>
+
+        <section id="simulador">
+            <h2>Simulador de Comandos Git</h2>
+            <p>Use esta área para praticar comandos Git sem risco. Digite um comando
+                abaixo para ver o que aconteceria:</p>
+
+                <div class="simulador">
+                    <div class="terminal" id="terminal-output">
+                    <div class="terminal-line"><span class="terminal-prompt">$</span> Bem-vindo ao 
+                    simulador Git!</div>
+                    <div class="terminal-line"><span class="terminal-prompt">$</span> Digite um comando
+                        Git para simular sua execução.</div>
+                    </div>
+                    <div class="input-area">
+                        <input type="text" id="command-input" placeholder="Digite um comando Git (ex:git status)">
+                        <button id="execute-btn">Executar</button>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Git para Iniciantes - Um guia prático para seus
+                primeiros passos com Git e VScode</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const terminalOutput = document.getElementById('terminal-output');
+            const commandInput = document.getElementById('command-input');
+            const executeBnt = document.getElementById('execute-btn');
+
+            // Respostas
+            const commandResponses = {
+                'git status': `No ramo main\nNada a comitar, diretório de trabalho limpo`,
+
+                'git add .': `Arquivos adicionados ao staged area com sucesso`,
+
+                'git commit -m "mensagem"': `[main 1a2b3c4] mensagem\n1 file changed, 5 insertions(+)`,
+
+                'git log': `commit 1a2b3c4d5e6f7g8h9i0j (HEAD -> main)\nAuthor: Seu Nome <email@exm
+    plo.com>\nDate: ${new Date().toLocaleString()}\n\n    Mensagem do último commit\n\ncommit a1b2c3d45e
+    f6g7h8i9j0\nAuthor: Seu Nome <email@exemplo.com>\nDate: ${new (Date.now() - 86400000).toLocaleSt
+    ring()}\n\n      Commit inicial`,
+
+
+                        'git branch':`* main`,
+
+                        'git branch nova-feature': `Branch 'nova-feature' criada.`,
+
+                        'git checkout nova-feature': `Switched to branch 'nova-feature`,
+
+                        'git init': `Initialized empty Git repository in .git/`,
+
+                        'git config --list': `user.name=Seu Nome`
+            user.email=email@exemplo.com
+            color.ui=auto`
+                        };
+
+                    function executeCommand() {
+                    const command = commandInput.value.trim();
+                    if (!command) return;
+                    
+                    const commandLine = document.createElement('div');
+                    commandLine.className = 'terminal-line';
+                    commandLine.innerHTML = `<span class="terminal-prompt">$</span> ${command}`;
+                    terminalOutput.appendChild(commandLine);
+                    
+                    
+                    let response = 'Commando não reconhecido. Digite "help" para ver os camandos disponíveis.';
+                    
+                    if (command  === 'help') {
+                    response = 'Comandos disponíveis: ' + Object.keys(commandResponses).join(', ');
+                    } else {
+                     for (const cmd in commandResponses) {
+                        if (command.startsWith(cmd)) {
+                        response = commandResponses[cmd];
+                        break;
+                        
+            
+                        }
+
+                        }
+
+                        }
+
+                        const responseLine = document.createElement('div');
+                        responseLine.className = 'terminal-line';
+                        responseLine.textContent = response;
+                        terminalOutput.appendChild(responseLine);
+
+                        commandInput.value = '';
+                        terminalOutput.scrollTop = terminalOutput.scrollHeight;
+                        }
+
+                        executeBtn.addEventListener('click', executeCommand);
+                        commandInput.addEventListener('keypress', function(e) {
+                        if (e.key === 'Enter') {
+                        executeCommand();
+                        }
+                        });
+                           });
+</script>
+</body>
+</html>
