@@ -16,9 +16,7 @@
             color: #e2e8f0;
             line-height: 1.6;
             max-width: 100%;
-            /* permitir scroll vertical; esconder apenas overflow horizontal */
-            overflow-x: hidden;
-            overflow-y: auto;
+            overflow: hidden;
         }
         .container {
             max-width: 1200px;
@@ -51,8 +49,7 @@
             color: #93c5fd;
         }
         header {
-            /* corrigido typo: 135deg (graus) em vez de 135def */
-            background: linear-gradient(135deg, #1e40af 0%, #7e22ce 100%);
+            background: linear-gradient(135def, #1e40af 0%, #7e22ce 100%);
             color: white;
             padding: 60px 0;
             text-align: center;
@@ -196,18 +193,18 @@
     </style>
 </head>
 <body>
-    <nav aria-label="Navegacão principal">
+    <nav>
         <div class="container">
             <ul>
-                <li><a href="index.html">Git</a></li>
-                <li><a href="index0.html">Home</a></li>
+                <li><a href="index.html"></a></li>
+                <li><a href="index0.html"></a></li>
             </ul>
         </div>
     </nav>
     <header>
         <div class="container">
             <h1>Física Quântica para Iniciantes</h1>
-            <p>Explore os fundamnetos do mundo quântico e sua relação com a programação em python</p>
+            <p>Explore os fundamnetos do mundo quântico e sua relação com a programação</p>
 
         </div>
     </header>
@@ -237,21 +234,6 @@
                     <p>Uma partícula quântica pode existir em múltiplos estados ao mesmo tempo, até
                        que seja medida e "colapse" em um estado específico.</p>
                 </div>
-            </div>
-        </section>
-
-        <section id="pyton-quantica">
-            <h2>Python  e Física Quântica</h2>
-            <p>Python é ferramenta poderosa para simular e explorar conceitos quânticos.  Com bibliotecas
-               especializadas, podemos modelar sistemas quânticos e realizar experimentos computacionais.
-            </p>
-
-            <h3>Exemplo: Simulação de Qubit</h3>
-            <p>Um qubit é a unidade básica de informação quântica, semelhante ao bit clássico, mas
-               com a capacidade de existir em superposição.</p>
-
-            <div class="code-block">
-                <span class="code-comment"># Exemplo de código Python para um qubit simples</span>
             </div>
         </section>
     </main>
