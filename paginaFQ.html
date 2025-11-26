@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Física Quântica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+            max-width: 100%;
+            /* permitir scroll vertical; esconder apenas overflow horizontal */
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+         nav  {
+            background-color: #1e293b;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 15px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #60a5fa;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all0.3s ease;
+        }
+        nav a:hover {
+            background-color: #374151;
+            color: #93c5fd;
+        }
+        header {
+            /* corrigido typo: 135deg (graus) em vez de 135def */
+            background: linear-gradient(135deg, #1e40af 0%, #7e22ce 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #334155;
+        }
+        h2 {
+            color: #60a5fa;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            text-align: center;
+        }
+        h3 {
+            color: #a78bfa;
+            margin: 25px 0 15px;
+            font-size: 1.5rem;
+        }
+        p {
+            margin-bottom: 15px ;
+            font-size: 1.1rem;
+        }
+        .concept-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .card {
+            background-color: #1e293b;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px  6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #7e22ce;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+        .card h4 {
+            color: #93c5fd;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .code-block {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family:'Courier New',  monospace;
+            margin: 20px 0;
+            overflow-x: auto ;
+            border-left: 4px solid #10b981;
+        }
+        .code-comment {
+            color: #6b7280;
+        }
+        .code-keyword {
+            color: #f472b6;
+        }
+        .code-function {
+            color: #60a5fa;
+        }
+        .experiment {
+            background-color: #1e293b;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 20px;
+            border: 1px solid #374151;
+        }
+        .experiment-controls {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .experiment-controls button {
+            background-color: #7e22ce;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .experiment-controls button:hover {
+            background-color: #6b21a8;
+        }
+        .experiment-visualization {
+            height: 200px;
+            background-color: #0f172a;
+            border-radius: 8px;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #374151;
+        }
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #60a5fa;
+            transition: all 0.5s ease;
+        }
+        footer {
+            background-color: #1e293b;
+            color: #9ca3af;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav li {
+                margin: 5px 0;
+            }
+            .concept-cards {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav aria-label="Navegacão principal">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Git</a></li>
+                <li><a href="index0.html">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <div class="container">
+            <h1>Física Quântica para Iniciantes</h1>
+            <p>Explore os fundametos do mundo quântico e sua relação com a programação em python</p>
+
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="introducao">
+            <h2>Introdução à Física Quântica</h2>
+            <p>A física quântica é a teoria que descreve o comportamento da matéria e da energia em
+               escalas atômicas e subatômicas. Ela introduz conceitos que desafiam nossa intuiçâ~, mas que são
+               fundamentais para entender o universo em sua menor escala.</p>
+
+            <div class="concept-cards">
+                <div class="card">
+                    <h4>Dualidade Onda-Partícula</h4>   
+                    <p>Onda-Partícula quântica como elétrons podem exibir comportamentos tanto de
+                       partículas quanto de ondas, dependendo de como são observados.</p>
+                </div>
+
+                <div class="card">
+                    <h4>Princípio da Incerteza</h4>
+                    <p>Formulado por Heisenberg, estabelece que é impossível conhecer simultaneamente
+                       com precisão absoluta a posição e o momento de uma partícula.</p>
+                </div>
+
+                <div class="card">
+                    <h4>Superposição Quântica</h4>
+                    <p>Uma partícula quântica pode existir em múltiplos estados ao mesmo tempo, até
+                       que seja medida e "colapse" em um estado específico.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pyton-quantica">
+            <h2>Python  e Física Quântica</h2>
+            <p>Python é ferramenta poderosa para simular e explorar conceitos quânticos.  Com bibliotecas
+               especializadas, podemos modelar sistemas quânticos e realizar experimentos computacionais.
+            </p>
+
+            <h3>Exemplo: Simulação de Qubit</h3>
+            <p>Um qubit é a unidade básica de informação quântica, semelhante ao bit clássico, mas
+               com a capacidade de existir em superposição.</p>
+
+            <div class="code-block">
+                <span class="code-comment"># Exemplo de código Python para um qubit simples</span>
+            </div>
+        </section>
+    </main>
+
+
+</body>
+</html>
